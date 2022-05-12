@@ -5,8 +5,177 @@
 body {
   background-color: #FB6B6B;
   margin: 54px 0 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Recursive', sans-serif;
   color: #262626;
-  font-weight: 400;
-  font-size: 14px;
+
+
+}
+
+h1 {
+  font-family: 'Righteous', cursive;
+  font-size: 36px;
+  color: white;
+}
+
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 45%;
+}
+
+main img {
+  height: 161px;
+  width: 136px;
+  margin-bottom: 13px;
+}
+
+.page1 button {
+  font-family: 'Recursive', sans-serif;
+
+
+  margin-top: 46px;
+  width: 246px;
+
+  min-height: 54px;
+  font-size: 18px;
+  color: #D70900;
+  background: #FFFFFF;
+  border: 1px solid #D70900;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+}
+
+
+
+
+
+.page2 {
+  margin-top: 19%;
+  height: 320px;
+  justify-content: space-between;
+
+
+
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+header h1 {
+  width: 203px;
+
+  text-align: center;
+}
+
+header img {
+  height: 60px;
+  width: 52px;
+}
+
+main button {
+  font-family: 'Recursive', sans-serif;
+  font-weight: 700;
+  color: #333333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 300px;
+  height: 65px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  border: none;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+button ion-icon {
+  font-size: 29px;
+
+}
+
+
+
+
+
+
+.flip-container:hover .flipper {
+  transform: rotateY(180deg);
+  /* se quiser uma animação na vertical,
+	troque por rotateX(180deg)
+	*/
+}
+
+.flipper {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flipper {
+  position: relative;
+
+}
+
+
+
+.back {
+  transform: rotateY(180deg);
+
+
+}
+
+
+
+.flipper .back {
+  height: 161px;
+  width: 299px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  border: none;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding: 30px;
+
+}
+
+
+.front,
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+
+
+
+
+
+
+
+footer {
+
+  height: 70px;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: #FFFFFF;
+  box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.05);
 }
