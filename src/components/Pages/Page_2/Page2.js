@@ -1,8 +1,8 @@
-import ButtonQuestion from "./ButtonQuestion"
-import ButtomNumberQuestion from "./ButtomNumberQuestion";
+import ButtonQuestion from "../function ButtonQuestion/ButtonQuestion"
+import ButtomNumberQuestion from "../ButtomNumberQuestion/ButtomNumberQuestion";
 import React from "react"
-
-
+import FooterResults from "../FooterResults/FooterResults";
+import FooterPlay from "../../FooterPlay/FooterPlay";
 
 export default function Page2() {
 
@@ -10,13 +10,13 @@ export default function Page2() {
     //variável de estado contendo as questões
     const [ButtonsNumbersQuestions, setButtonsNumbersQuestions] = React.useState([
         { question: "O que é JSX?", answer: "Uma extensão de linguagem do JavaScript", type: " " },
-        { question: " O React é __ ", answer: "uma biblioteca JavaScript para construção de interfaces", type: " " },
+        { question: "O React é __ ", answer: "uma biblioteca JavaScript para construção de interfaces", type: " " },
         { question: "Componentes devem iniciar com __ ", answer: "letra maiúscula", type: " " },
-        { question: " Podemos colocar __ dentro do JSX ", answer: " expressões", type: " " },
-        { question: "O que é JSX?", answer: "Uma extensão de linguagem do JavaScript", type: " " },
-        { question: " O React é __ ", answer: "uma biblioteca JavaScript para construção de interfaces", type: " " },
-        { question: "Componentes devem iniciar com __ ", answer: "letra maiúscula", type: "" },
-        { question: " Podemos colocar __ dentro do JSX ", answer: " expressões", type: " " },
+        { question: "Podemos colocar __ dentro do JSX ", answer: " expressões", type: " " },
+        { question: "O ReactDOM nos ajuda __ ", answer: "interagindo com a DOM para colocar componentes React na mesma", type: " " },
+        { question: "Usamos o npm para __ ", answer: "gerenciar os pacotes necessários e suas dependências", type: " " },
+        { question: "Usamos props para __ ", answer: "passar diferentes informações para componentes ", type: "" },
+        { question: "Usamos estado (state) para __ ", answer: "dizer para o React quais informações quando atualizadas devem renderizar a tela novamente", type: " " },
     ])
 
     // função que vira o card
@@ -63,13 +63,12 @@ export default function Page2() {
 
     }
     return (
-
-
-        <>
+        <div className="page2Father">
             <header>
                 <img src="assets/logo.png"></img>
                 <h1>ZapRecall</h1>
             </header>
+
             <main className="page2">
 
                 {ButtonsNumbersQuestions.map((element, index) => backFaceCard !== index
@@ -82,84 +81,18 @@ export default function Page2() {
                         eventButtonAnswerCorrect={() => eventButtonAnswerCorrect("answerCorrect", index)} />)
                 }
 
-
             </main>
 
             {arrIcons.length === 8 ? <FooterResults arrNameIcons={arrIcons} /> : <FooterPlay arrNameIcons={arrIcons} />}
 
-        </>
+        </div>
     )
 }
 
 
-//função que renderiza o resultado do footer
-function FooterResults(props) {
-
-    const arrCheckFilter = props.arrNameIcons.filter((element) => element === "checkmark-circle")
-    console.log(arrCheckFilter)
-
-    return (
-        <footer className="footerResults">
-
-            {arrCheckFilter.length === props.arrNameIcons.length ? <CongratulationsResult /> : <SadResult />}
-
-            <h2> {props.arrNameIcons.length}/8 CONCLUÍDOS</h2>
-            <div className="icons">
-                {props.arrNameIcons.map((element, index) => <ion-icon key={index} class={element === "checkmark-circle" ? "answerCorrectIcon" : element === "help-circle" ? "answerAlmostIcon" : "answerIncorrectIcon"} name={element}></ion-icon>)}
-
-            </div>
-        </footer>
-
-
-    )
-
-}
-//função que renderiza o resultado do footer caso tenha uma errada
-function SadResult() {
-    return (
-        <>
-            <span >
-                <img src="../assets/sad.png" alt="" />
-                <h2>Putz...</h2>
-            </span>
-
-            <p>Ainda faltam alguns... Mas não desanime!</p>
-
-        </>
-    )
-}
-
-//função que renderiza o resultado do footer caso todas estejam certas
-function CongratulationsResult() {
-    return (
-        <>
-            <span >
-                <img src="../assets/party.png" alt="" />
-                <h2>Parabéns</h2>
-            </span>
-
-            <p>Você não esqueceu de nenhum flashcard!</p>
-
-        </>
-    )
-
-}
 
 
 
 
 
 
-
-// função que renderiza o footer enquanto é jogado
-function FooterPlay(props) {
-    return (
-        <footer className="footerPlay">
-            <h2> {props.arrNameIcons.length}/8 CONCLUÍDOS</h2>
-            <div className="icons">
-                {props.arrNameIcons.map((element, index) => <ion-icon key={index} class={element === "checkmark-circle" ? "answerCorrectIcon" : element === "help-circle" ? "answerAlmostIcon" : "answerIncorrectIcon"} name={element}></ion-icon>)}
-
-            </div>
-        </footer>
-    )
-}

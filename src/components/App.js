@@ -1,20 +1,31 @@
-import Page1 from "./Page1"
+import Page1 from "./Pages/Page_1/Page1"
 import React from "react";
-import Page2 from "./Page2";
+import Page2 from "./Pages/Page_2/Page2";
+import FooterResults from "./FooterResults/FooterResults";
 
 
 
 export default function App() {
 
-    const [goPage2, setGoPage2] = React.useState('home');
+    const [goPage, setGoPage] = React.useState('home');
 
-    function goToPage2() {
-        setGoPage2("page2");
+    function goToPage(page) {
+        setGoPage(page);
     }
+
+
+    function goToHome(page) {
+        setGoPage(page);
+    }
+
+
+
 
     return (
         <>
-            {goPage2 === 'home' ? <Page2 /> : <Page1 goToPage2={goToPage2} />}
+            {goPage === 'home' ? <Page1 goToPage={() => goToPage("goToPage2")} />
+                : goPage === "goToPage2" ? <Page2 />
+                    : <FooterResults goToHome={() => goToHome("home")} />}
         </>
     )
 }

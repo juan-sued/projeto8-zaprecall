@@ -11,11 +11,7 @@ body {
 
 }
 
-h1 {
-  font-family: 'Righteous', cursive;
-  font-size: 36px;
-  color: white;
-}
+
 
 
 main {
@@ -26,34 +22,6 @@ main {
   margin-top: 45%;
 }
 
-main img {
-  height: 161px;
-  width: 136px;
-  margin-bottom: 13px;
-}
-
-.page1 button {
-  font-family: 'Recursive', sans-serif;
-
-
-  margin-top: 46px;
-  width: 246px;
-
-  min-height: 54px;
-  font-size: 18px;
-  color: #D70900;
-  background: #FFFFFF;
-  border: 1px solid #D70900;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  border-radius: 5px;
-}
-
-
-
-
-
-
-
 
 header {
   display: flex;
@@ -62,18 +30,14 @@ header {
 
 }
 
-header h1 {
-  width: 203px;
 
-  text-align: center;
-}
 
 header img {
   height: 60px;
   width: 52px;
 }
 
-main button {
+button {
   font-family: 'Recursive';
   font-weight: 700;
   color: #333333;
@@ -91,12 +55,52 @@ main button {
   margin-bottom: 20px;
   font-size: 16px;
 
+
+}
+
+/* === PAGE 1 === */
+
+.page1 header {
+  flex-direction: column;
+  margin-top: 180px
+}
+
+.page1 header img {
+  width: 136px;
+  height: 161px;
+}
+
+.page1 h1 {
+  font-family: 'Righteous', cursive;
+  font-size: 36px;
+  color: white;
 }
 
 
+.page1 button {
+  margin-top: 46px;
+  width: 246px;
+  height: 54px;
+  font-size: 18px;
+  color: #D70900;
+  border: 1px solid #D70900;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+
+.page1 main {
+  margin-top: 20px;
+
+}
+
+
+/* === PAGE 2 === */
+
 button ion-icon {
   font-size: 29px;
-
+  cursor: pointer;
 
 }
 
@@ -107,16 +111,26 @@ button ion-icon {
   display: flex;
   justify-content: start;
   margin-bottom: 70px;
+}
 
-
-
-
+.page2Father header h1 {
+  font-family: 'Righteous';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 45px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: -0.012em;
+  color: #FFFFFF;
+  transform: rotate(0.58deg);
 }
 
 .card {
 
   width: 300px;
-  height: 131px;
+  height: 135px;
   position: relative;
   margin-bottom: 20px;
 }
@@ -210,16 +224,19 @@ button ion-icon {
 .buttonsCardOptions .noRememberButton {
   background-color: #FF3030;
   margin: 0;
+  cursor: pointer;
 }
 
 .buttonsCardOptions .almostRememberButton {
   background-color: #FF922E;
   margin: 0;
+  cursor: pointer;
 }
 
 .buttonsCardOptions .zapButton {
   background-color: #2FBE34;
   margin: 0;
+  cursor: pointer;
 }
 
 
@@ -232,12 +249,14 @@ button ion-icon {
   transform: rotateY(-180deg);
 }
 
+/* icon card */
 main img {
   position: relative;
   top: 10px;
   left: 5px;
   width: 30px;
   height: 20px;
+  cursor: pointer;
 }
 
 .iconcard {
@@ -265,6 +284,7 @@ main img {
   line-height: 19px;
   text-decoration-line: line-through;
   color: #FF3030;
+
 }
 
 .answerAlmost {
@@ -332,7 +352,7 @@ footer .icons {
 
 
 .footerResults {
-  height: 171px;
+  height: 180px;
 }
 
 footer h2 {
@@ -365,5 +385,20 @@ footer span {
 
   width: 120px;
 
+}
 
+.footerResults button {
+  width: 167px;
+  height: 32px;
+
+  background: #FB6B6B;
+  border-radius: 5px;
+  font-family: 'Recursive';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
 }
