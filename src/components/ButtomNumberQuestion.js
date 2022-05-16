@@ -42,7 +42,7 @@ export default function ButtomNumberQuestion(props) {
 
     else if (props.responseButton === "answerCorrect") {
         return (
-            <button className={props.answerIcorrect}>
+            <button className="answerCorrect" >
                 <p >
                     Pergunta {props.numberQuestion}
                 </p>

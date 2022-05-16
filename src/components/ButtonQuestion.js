@@ -32,13 +32,13 @@ export default function ButtonQuestion(props) {
                     <p>{props.answer}</p>
 
                     <span className='buttonsCardOptions'>
-                        <button className='noRememberButton' onClick={() => props.eventButtonAnswer("answerWrong")} >
+                        <button className='noRememberButton' onClick={() => props.eventButtonAnswerWrong()} >
                             Não lembrei
                         </button>
-                        <button className='almostRememberButton' onClick={() => props.eventButtonAnswer("answerAlmost")}>
+                        <button className='almostRememberButton' onClick={() => props.eventButtonAnswerAlmost()}>
                             Quase não lembrei
                         </button>
-                        <button className='zapButton' onClick={() => props.eventButtonAnswer("answerCorrect")}>
+                        <button className='zapButton' onClick={() => props.eventButtonAnswerCorrect()}>
                             Zap!
                         </button>
                     </span>
