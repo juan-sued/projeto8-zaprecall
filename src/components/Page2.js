@@ -54,7 +54,7 @@ export default function Page2() {
 
 
     const [arrIcons, setArrIcons] = React.useState([])
-
+    //função que incrementa e atualiza a lista de icons vinda de eventButtons
     function incrementListIcons(icon) {
         arrIcons.push(icon)
         const newArrIcons = [...arrIcons]
@@ -62,9 +62,6 @@ export default function Page2() {
         console.log(arrIcons)
 
     }
-
-
-
     return (
 
 
@@ -95,11 +92,16 @@ export default function Page2() {
 }
 
 
+//função que renderiza o resultado do footer
 function FooterResults(props) {
+
+    const arrCheckFilter = props.arrNameIcons.filter((element) => element === "checkmark-circle")
+    console.log(arrCheckFilter)
+
     return (
         <footer className="footerResults">
 
-            {props.arrNameIcons.filter((element) => { element === "checkmark-circle" ? <CongratulationsResult /> : <SadResult /> })}
+            {arrCheckFilter.length === props.arrNameIcons.length ? <CongratulationsResult /> : <SadResult />}
 
             <h2> {props.arrNameIcons.length}/8 CONCLUÍDOS</h2>
             <div className="icons">
@@ -112,7 +114,7 @@ function FooterResults(props) {
     )
 
 }
-
+//função que renderiza o resultado do footer caso tenha uma errada
 function SadResult() {
     return (
         <>
@@ -127,7 +129,7 @@ function SadResult() {
     )
 }
 
-
+//função que renderiza o resultado do footer caso todas estejam certas
 function CongratulationsResult() {
     return (
         <>
@@ -149,7 +151,7 @@ function CongratulationsResult() {
 
 
 
-
+// função que renderiza o footer enquanto é jogado
 function FooterPlay(props) {
     return (
         <footer className="footerPlay">
