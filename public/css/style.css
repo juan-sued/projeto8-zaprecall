@@ -358,6 +358,16 @@ footer .icons {
 footer h2 {
   font-family: 'Recursive';
   font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  /* identical to box height */
+  color: #333333;
+}
+
+span h2 {
+  font-family: 'Recursive';
+  font-style: normal;
   font-weight: 700;
   font-size: 18px;
   line-height: 22px;
@@ -366,6 +376,7 @@ footer h2 {
 
   color: #333333;
 }
+
 
 footer p {
   font-family: 'Recursive';
@@ -401,4 +412,6 @@ footer span {
   align-items: center;
   justify-content: center;
   color: #FFFFFF;
+
+  box-shadow: none;
 }

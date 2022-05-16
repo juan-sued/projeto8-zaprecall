@@ -9,7 +9,7 @@ export default function Page1(props) {
                 <h1>ZapRecall</h1>
             </header>
             <main className="page1">
-                <button onClick={() => props.goToPage()}>Inciar Recall!</button>
+                <button onClick={() => props.goToPage2()}>Inciar Recall!</button>
             </main>
 
         </div>

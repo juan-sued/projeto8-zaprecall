@@ -1,7 +1,7 @@
-import ButtonQuestion from "../function ButtonQuestion/ButtonQuestion"
-import ButtomNumberQuestion from "../ButtomNumberQuestion/ButtomNumberQuestion";
+import ButtonQuestion from "../../ButtonQuestion/ButtonQuestion"
+import ButtomNumberQuestion from "../../ButtomNumberQuestion/ButtomNumberQuestion";
 import React from "react"
-import FooterResults from "../FooterResults/FooterResults";
+import FooterResults from "../../FooterResults/FooterResults";
 import FooterPlay from "../../FooterPlay/FooterPlay";
 
 export default function Page2() {
@@ -18,6 +18,29 @@ export default function Page2() {
         { question: "Usamos props para __ ", answer: "passar diferentes informações para componentes ", type: "" },
         { question: "Usamos estado (state) para __ ", answer: "dizer para o React quais informações quando atualizadas devem renderizar a tela novamente", type: " " },
     ])
+    const [embaralhado, setEmbaralhado] = React.useState(false)
+
+
+    randomArray(ButtonsNumbersQuestions);
+    // function que aleatoriza a array de objetos
+    function randomArray(arr) {
+        //embaralha as perguntas
+        if (embaralhado === true) {
+            return
+        }
+        console.log("passou na função " + ButtonsNumbersQuestions)
+        setEmbaralhado(true);
+        return arr.sort(random)
+
+    }
+
+    function random() {
+        return Math.random() - 0.5;
+    }
+
+
+
+
 
     // função que vira o card
     const [backFaceCard, setBackFaceCard] = React.useState("card fechado")
@@ -88,9 +111,6 @@ export default function Page2() {
         </div>
     )
 }
-
-
-
 
 
 
