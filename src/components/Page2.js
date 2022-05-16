@@ -30,6 +30,7 @@ export default function Page2() {
         ButtonsNumbersQuestions[position].type = type
         const newButtonsNumbersQuestions = [...ButtonsNumbersQuestions]
         setButtonsNumbersQuestions(newButtonsNumbersQuestions)
+        incrementListIcons("close-circle")
         setBackFaceCard("card fechado")
 
     }
@@ -39,6 +40,7 @@ export default function Page2() {
         ButtonsNumbersQuestions[position].type = type
         const newButtonsNumbersQuestions = [...ButtonsNumbersQuestions]
         setButtonsNumbersQuestions(newButtonsNumbersQuestions)
+        incrementListIcons("help-circle")
         setBackFaceCard("card fechado")
     }
     //função que torna questão como certa e atualiza a array de questions
@@ -46,13 +48,26 @@ export default function Page2() {
         ButtonsNumbersQuestions[position].type = type
         const newButtonsNumbersQuestions = [...ButtonsNumbersQuestions]
         setButtonsNumbersQuestions(newButtonsNumbersQuestions)
+        incrementListIcons("checkmark-circle")
         setBackFaceCard("card fechado")
     }
 
 
+    const [arrIcons, setArrIcons] = React.useState([])
+
+    function incrementListIcons(icon) {
+        arrIcons.push(icon)
+        const newArrIcons = [...arrIcons]
+        setArrIcons(newArrIcons);
+        console.log(arrIcons)
+
+    }
+
 
 
     return (
+
+
         <>
             <header>
                 <img src="assets/logo.png"></img>
@@ -73,14 +88,76 @@ export default function Page2() {
 
             </main>
 
-            <footer>
-                <h2> {ButtonsNumbersQuestions.map()}/8 CONCLUÍDOS</h2>
+            {arrIcons.length === 8 ? <FooterResults arrNameIcons={arrIcons} /> : <FooterPlay arrNameIcons={arrIcons} />}
 
-                <div className="icons">
-                    <ion-icon name="help-circle"></ion-icon>  <ion-icon name="help-circle"></ion-icon>  <ion-icon name="help-circle"></ion-icon>
-                </div>
-
-            </footer>
         </>
+    )
+}
+
+
+function FooterResults(props) {
+    return (
+        <footer className="footerResults">
+
+            {props.arrNameIcons.filter((element) => { element === "checkmark-circle" ? <CongratulationsResult /> : <SadResult /> })}
+
+            <h2> {props.arrNameIcons.length}/8 CONCLUÍDOS</h2>
+            <div className="icons">
+                {props.arrNameIcons.map((element, index) => <ion-icon key={index} class={element === "checkmark-circle" ? "answerCorrectIcon" : element === "help-circle" ? "answerAlmostIcon" : "answerIncorrectIcon"} name={element}></ion-icon>)}
+
+            </div>
+        </footer>
+
+
+    )
+
+}
+
+function SadResult() {
+    return (
+        <>
+            <span >
+                <img src="../assets/sad.png" alt="" />
+                <h2>Putz...</h2>
+            </span>
+
+            <p>Ainda faltam alguns... Mas não desanime!</p>
+
+        </>
+    )
+}
+
+
+function CongratulationsResult() {
+    return (
+        <>
+            <span >
+                <img src="../assets/party.png" alt="" />
+                <h2>Parabéns</h2>
+            </span>
+
+            <p>Você não esqueceu de nenhum flashcard!</p>
+
+        </>
+    )
+
+}
+
+
+
+
+
+
+
+
+function FooterPlay(props) {
+    return (
+        <footer className="footerPlay">
+            <h2> {props.arrNameIcons.length}/8 CONCLUÍDOS</h2>
+            <div className="icons">
+                {props.arrNameIcons.map((element, index) => <ion-icon key={index} class={element === "checkmark-circle" ? "answerCorrectIcon" : element === "help-circle" ? "answerAlmostIcon" : "answerIncorrectIcon"} name={element}></ion-icon>)}
+
+            </div>
+        </footer>
     )
 }

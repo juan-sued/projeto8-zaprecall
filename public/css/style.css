@@ -295,14 +295,14 @@ main img {
 
 
 
-
+/* FOOTER */
 footer {
 
   height: 70px;
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   font-size: 18px;
   position: fixed;
@@ -317,15 +317,53 @@ footer .icons {
 
 }
 
-.answerIncorrectIcon {
+.icons .answerIncorrectIcon {
   color: #FF3030;
 }
 
-.answerAlmostIcon {
+.icons .answerAlmostIcon {
   color: #FF922E;
 }
 
-.answerCorrectIcon {
+.icons .answerCorrectIcon {
 
   color: #2FBE34;
+}
+
+
+.footerResults {
+  height: 171px;
+}
+
+footer h2 {
+  font-family: 'Recursive';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  /* identical to box height */
+
+
+  color: #333333;
+}
+
+footer p {
+  font-family: 'Recursive';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  color: #333333;
+
+}
+
+
+footer span {
+  display: flex;
+  justify-content: space-around;
+
+  width: 120px;
+
+
 }
