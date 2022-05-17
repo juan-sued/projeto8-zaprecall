@@ -62,12 +62,13 @@ button {
 
 .page1 header {
   flex-direction: column;
-  margin-top: 180px
+  margin-top: 160px
 }
 
 .page1 header img {
-  width: 136px;
-  height: 161px;
+  width: 110px;
+  height: 140px;
+  margin-bottom: 10px;
 }
 
 .page1 h1 {
@@ -76,9 +77,21 @@ button {
   color: white;
 }
 
+.page1 input {
+  margin-top: 46px;
+  width: 246px;
+  height: 43px;
+  border: none;
+  background: #FFFFFF;
+  border-radius: 5px;
+  text-align: center;
+  font-family: 'Recursive';
+  margin-bottom: 30px;
+}
 
 .page1 button {
-  margin-top: 46px;
+
+
   width: 246px;
   height: 54px;
   font-size: 18px;
@@ -87,6 +100,13 @@ button {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+
+}
+
+.page1 .buttonDisable {
+  background: #E8E8E8;
+  color: #2626266c;
+  border: #E8E8E8;
 }
 
 
@@ -125,6 +145,10 @@ button ion-icon {
   letter-spacing: -0.012em;
   color: #FFFFFF;
   transform: rotate(0.58deg);
+}
+
+.page2Father header img {
+  margin-right: 20px;
 }
 
 .card {
@@ -415,6 +439,17 @@ footer span {
 
   box-shadow: none;
 }
+
+
+
+
+
+
+
+
+
+
+
 
 @media (min-width:900px) {
 

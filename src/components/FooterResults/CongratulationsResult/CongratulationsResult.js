@@ -1,7 +1,7 @@
 
 
 //função que renderiza o resultado do footer caso todas estejam certas
-export default function CongratulationsResult() {
+export default function CongratulationsResult({ metaCorrect }) {
     return (
         <>
             <span >
@@ -9,7 +9,7 @@ export default function CongratulationsResult() {
                 <h2>Parabéns</h2>
             </span>
 
-            <p>Você não esqueceu de nenhum flashcard!</p>
+            <p>Você bateu sua meta de {metaCorrect} acertos!</p>
 
         </>
     )

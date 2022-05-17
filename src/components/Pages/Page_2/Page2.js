@@ -4,7 +4,7 @@ import React from "react"
 import FooterResults from "../../FooterResults/FooterResults";
 import FooterPlay from "../../FooterPlay/FooterPlay";
 
-export default function Page2() {
+export default function Page2(props) {
 
 
     //variável de estado contendo as questões
@@ -85,6 +85,12 @@ export default function Page2() {
         console.log(arrIcons)
 
     }
+
+
+
+
+
+
     return (
         <div className="page2Father">
             <header>
@@ -106,7 +112,7 @@ export default function Page2() {
 
             </main>
 
-            {arrIcons.length === 8 ? <FooterResults arrNameIcons={arrIcons} /> : <FooterPlay arrNameIcons={arrIcons} />}
+            {arrIcons.length === 8 ? <FooterResults arrNameIcons={arrIcons} metaCorrect={props.metaCorrect} /> : <FooterPlay arrNameIcons={arrIcons} />}
 
         </div>
     )
